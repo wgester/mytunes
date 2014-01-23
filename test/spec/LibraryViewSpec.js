@@ -17,14 +17,14 @@ describe("LibraryView", function() {
     fakeSongs = new Songs(fakeSongData);
   });
 
-  xit("should render its subviews when you render it", function(){
+  it("should render its subviews when you render it", function(){
     fakeSubview = { render: jasmine.createSpy() };
     spyOn(window, 'LibraryEntryView').andReturn(fakeSubview);
     view = new LibraryView({collection: fakeSongs});
     expect(fakeSubview.render.callCount).toEqual(fakeSongData.length);
   });
 
-  xit("should have a header element after being rendered", function(){
+  it("should have a header element after being rendered", function(){
     view = new LibraryView({collection: fakeSongs});
     expect(view.$el.children().length).toBe(2);
     expect(view.$el.children()[0].tagName).toBe('TH');
