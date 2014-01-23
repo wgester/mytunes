@@ -2,6 +2,7 @@
 var SongQueue = Songs.extend({
 
   initialize: function(){
+    Songs.prototype.initialize.apply(this, arguments);
     this.on("add", this.addSong);
     this.on("ended", this.removeEndedSong);
     this.on("dequeue", this.removeSong, this);
@@ -19,6 +20,7 @@ var SongQueue = Songs.extend({
   },
 
   removeEndedSong : function(){
+    console.log(this);
     this.shift();
     if(this.models.length > 0){
       this.playFirst();
