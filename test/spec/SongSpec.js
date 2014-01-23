@@ -11,28 +11,28 @@ describe('SongModel', function() {
   });
 
   describe('play', function() {
-    it('triggers a "play" event', function() {
+    xit('triggers a "play" event', function() {
       model.play();
       expect(model.trigger).toHaveBeenCalledWith('play', model);
     });
   });
 
-  xdescribe('enqueue', function() {
-    it('triggers an "enqueue" event', function() {
+  describe('enqueue', function() {
+    xit('triggers an "enqueue" event', function() {
       model.enqueue();
       expect(model.trigger).toHaveBeenCalledWith('enqueue', model);
     });
   });
 
-  xdescribe('dequeue', function() {
-    it('triggers a "dequeue" event', function() {
+  describe('dequeue', function() {
+    xit('triggers a "dequeue" event', function() {
       model.dequeue();
       expect(model.trigger).toHaveBeenCalledWith('dequeue', model);
     });
   });
 
-  xdescribe('ended', function() {
-    it('triggers an "ended" event', function() {
+  describe('ended', function() {
+    xit('triggers an "ended" event', function() {
       model.play();
       model.ended();
       expect(model.trigger).toHaveBeenCalledWith('ended', model);
